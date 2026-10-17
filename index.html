@@ -4,31 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RG Muebles | Próximamente</title>
+  <!-- Fuentes Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     :root {
       --bg-dark: #121212;
-      --card-bg: rgba(26, 24, 22, 0.9);
+      --card-bg: rgba(22, 20, 19, 0.95);
+      --wood-color: #d8b28a;
+      --wood-dark: #2a1f18;
       --accent-wood: #c89d7c;
-      --accent-wood-light: #e2c0a5;
       --text-main: #f5f5f5;
-      --text-muted: #a0a0a0;
+      --text-muted: #b0b0b0;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-serif;
     }
 
     body {
       background: radial-gradient(circle at center, #221e1a 0%, #0d0c0b 100%);
       color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -38,146 +40,142 @@
       text-align: center;
     }
 
-    .card {
+    .container {
       position: relative;
-      max-width: 520px;
+      max-width: 560px;
       width: 100%;
       background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      padding: 40px 30px;
+      backdrop-filter: blur(10px);
+      padding: 25px;
       border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-      border-top: 3px solid var(--accent-wood);
-      border-bottom: 1px solid rgba(200, 157, 124, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(200, 157, 124, 0.25);
     }
 
-    /* Contenedor del Logo original */
-    .logo-container {
-      width: 95px;
-      height: 95px;
-      margin: 0 auto 18px auto;
+    /* CABECERA ESTILO BANNER DE MADERA */
+    .header-banner {
+      background: #e5be93 linear-gradient(180deg, #edd0ab 0%, #d8ae80 100%);
+      border-radius: 12px;
+      padding: 25px 20px 18px 20px;
+      color: #1a1a1a;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1), 0 4px 15px rgba(0,0,0,0.3);
+      margin-bottom: 25px;
+    }
+
+    .brand-top {
       display: flex;
-      justify-content: center;
       align-items: center;
-      background: #ffffff;
-      border-radius: 50%;
-      padding: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      border: 2px solid var(--accent-wood);
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 18px;
     }
 
-    .logo-container img {
-      width: 100%;
-      height: 100%;
+    .brand-logo {
+      height: 65px;
+      width: auto;
       object-fit: contain;
-      border-radius: 50%;
     }
 
-    .brand-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: 4px;
-      color: var(--text-main);
-      margin-bottom: 6px;
+    .brand-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #111111;
+      letter-spacing: -0.5px;
+      line-height: 1;
     }
 
-    .brand-subtitle {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--accent-wood);
-      letter-spacing: 3px;
-      margin-bottom: 22px;
+    /* Tira oscura inferior con los rubros */
+    .services-bar {
+      background-color: #2b211a;
+      color: #f3e9df;
+      padding: 8px 15px;
+      border-radius: 25px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      word-spacing: 2px;
     }
 
-    .wood-divider {
-      height: 2px;
-      width: 80px;
-      background: linear-gradient(90deg, transparent, var(--accent-wood), transparent);
-      margin: 0 auto 25px auto;
-    }
-
+    /* CONTENIDO PRINCIPAL */
     .status-badge {
       display: inline-block;
-      padding: 6px 16px;
-      background: rgba(200, 157, 124, 0.12);
-      border: 1px solid rgba(200, 157, 124, 0.3);
+      padding: 6px 18px;
+      background: rgba(200, 157, 124, 0.15);
+      border: 1px solid rgba(200, 157, 124, 0.4);
       border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent-wood-light);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #e2c0a5;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
     }
 
     .description {
-      font-size: 0.98rem;
+      font-size: 1rem;
       color: var(--text-muted);
       line-height: 1.6;
       margin-bottom: 25px;
       font-weight: 300;
+      padding: 0 10px;
     }
 
-    /* Contenedor del Código QR original */
+    /* SECCIÓN QR AMPLIADO */
     .qr-section {
-      margin: 20px 0;
+      margin: 25px 0;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
     }
 
     .qr-box {
       background: #ffffff;
-      padding: 10px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      padding: 12px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      border: 3px solid var(--accent-wood);
       display: inline-block;
     }
 
     .qr-box img {
-      width: 120px;
-      height: 120px;
+      width: 180px; /* Tamaño más grande y visible */
+      height: 180px;
       display: block;
       border-radius: 6px;
+      object-fit: contain;
     }
 
-    .qr-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
+    /* BOTONES DE CONTACTO */
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 14px;
+      margin-top: 25px;
     }
 
     .contact-btn {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding: 14px 18px;
-      background: rgba(255, 255, 255, 0.03);
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.04);
       border-radius: 12px;
       color: var(--text-main);
       text-decoration: none;
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .contact-btn:hover {
-      background: rgba(200, 157, 124, 0.15);
+      background: rgba(200, 157, 124, 0.18);
       border-color: var(--accent-wood);
       transform: translateY(-2px);
     }
 
     .contact-btn i {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: var(--accent-wood);
       width: 35px;
       text-align: center;
@@ -196,7 +194,7 @@
     }
 
     .contact-value {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 600;
     }
 
@@ -206,34 +204,57 @@
       color: var(--text-muted);
       letter-spacing: 1px;
     }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 18px;
+      }
+      .brand-name {
+        font-size: 2.1rem;
+      }
+      .brand-logo {
+        height: 50px;
+      }
+      .services-bar {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+      }
+      .qr-box img {
+        width: 150px;
+        height: 150px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <!-- Logo original mediante imagen -->
-    <div class="logo-container">
-      <img src="logo.png" alt="RG Muebles Logo">
+  <div class="container">
+    
+    <!-- CABECERA ESTILO MADERA -->
+    <div class="header-banner">
+      <div class="brand-top">
+        <img src="logo.png" alt="RG Muebles Logo" class="brand-logo">
+        <span class="brand-name">RG Muebles</span>
+      </div>
+      <div class="services-bar">
+        COCINAS &bull; BAÑOS &bull; VESTIDORES &bull; REVESTIMIENTOS
+      </div>
     </div>
 
-    <h1 class="brand-title">RG MUEBLES</h1>
-    <p class="brand-subtitle">Cocinas &bull; Baños &bull; Vestidores &bull; Revestimientos</p>
-    <div class="wood-divider"></div>
-
+    <!-- MENSAJE PRINCIPAL -->
     <div class="status-badge">¡Estamos diseñando!</div>
     <p class="description">
       Si querés amueblar tu espacio o convertir tus proyectos en realidad, comunicate con nosotros:
     </p>
 
-    <!-- Código QR original mediante imagen -->
+    <!-- CÓDIGO QR AMPLIADO -->
     <div class="qr-section">
       <div class="qr-box">
         <img src="qr.png" alt="QR RG Muebles">
       </div>
-      <span class="qr-label">Escaneá para contacto rápido</span>
     </div>
 
-    <!-- Botones de Contacto -->
+    <!-- BOTONES DE CONTACTO DIRECTO -->
     <div class="contact-links">
       <a href="https://wa.me/5491144965647" class="contact-btn" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
@@ -251,6 +272,7 @@
         </div>
       </a>
     </div>
+
   </div>
 
   <footer>
