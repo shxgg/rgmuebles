@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RG Muebles | Próximamente</title>
-  <!-- Fuentes Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <!-- FontAwesome para íconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     :root {
-      --bg-color: #1a1a1a;
-      --card-bg: #242424;
-      --accent-color: #c8a27d; /* Tono madera / dorado cálido */
-      --text-main: #ffffff;
-      --text-muted: #b0b0b0;
+      --bg-dark: #121212;
+      --card-bg: rgba(28, 26, 25, 0.85);
+      --accent-wood: #c89d7c;
+      --accent-wood-light: #e2c0a5;
+      --accent-wood-dark: #8c6243;
+      --text-main: #f5f5f5;
+      --text-muted: #a0a0a0;
     }
 
     * {
@@ -28,7 +28,7 @@
     }
 
     body {
-      background-color: var(--bg-color);
+      background: radial-gradient(circle at center, #24201d 0%, #100f0e 100%);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
@@ -37,95 +37,143 @@
       align-items: center;
       padding: 20px;
       text-align: center;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    .container {
-      max-width: 600px;
+    /* Detalle sutil de veteado de madera en el fondo */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(200, 157, 124, 0.015) 0px,
+        rgba(200, 157, 124, 0.015) 2px,
+        transparent 2px,
+        transparent 10px
+      );
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      max-width: 520px;
       width: 100%;
-      background-color: var(--card-bg);
-      padding: 40px 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      border: 1px solid rgba(200, 162, 125, 0.2);
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      padding: 45px 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border-top: 3px solid var(--accent-wood);
+      border-bottom: 1px solid rgba(200, 157, 124, 0.2);
+    }
+
+    /* Isotipo SVG de RG Muebles */
+    .logo-container {
+      width: 85px;
+      height: 85px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(200, 157, 124, 0.15), rgba(0,0,0,0.3));
+      border-radius: 50%;
+      padding: 12px;
+      border: 1px solid rgba(200, 157, 124, 0.3);
+    }
+
+    .logo-svg {
+      width: 100%;
+      height: 100%;
     }
 
     .brand-title {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       color: var(--text-main);
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .brand-subtitle {
-      font-size: 0.95rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      color: var(--accent-color);
+      color: var(--accent-wood);
       letter-spacing: 3px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       text-transform: uppercase;
     }
 
-    .divider {
+    .wood-divider {
       height: 2px;
-      width: 60px;
-      background-color: var(--accent-color);
-      margin: 0 auto 30px auto;
+      width: 80px;
+      background: linear-gradient(90deg, transparent, var(--accent-wood), transparent);
+      margin: 0 auto 28px auto;
     }
 
-    .status-text {
-      font-size: 1.8rem;
+    .status-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(200, 157, 124, 0.12);
+      border: 1px solid rgba(200, 157, 124, 0.3);
+      border-radius: 20px;
+      font-size: 0.85rem;
       font-weight: 600;
+      color: var(--accent-wood-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
       margin-bottom: 15px;
     }
 
     .description {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       font-weight: 300;
     }
 
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 14px;
     }
 
-    .contact-card {
+    .contact-btn {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding: 14px 20px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
       color: var(--text-main);
       text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid transparent;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 1px solid rgba(255, 255, 255, 0.07);
     }
 
-    .contact-card:hover {
-      background-color: rgba(200, 162, 125, 0.15);
-      border-color: var(--accent-color);
-      transform: translateY(-2px);
+    .contact-btn:hover {
+      background: rgba(200, 157, 124, 0.15);
+      border-color: var(--accent-wood);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
-    .contact-card i {
-      font-size: 1.4rem;
-      color: var(--accent-color);
-      width: 35px;
+    .contact-btn i {
+      font-size: 1.5rem;
+      color: var(--accent-wood);
+      width: 40px;
       text-align: center;
-      margin-right: 15px;
+      margin-right: 12px;
     }
 
-    .contact-info {
+    .contact-text {
       text-align: left;
     }
 
     .contact-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -137,71 +185,73 @@
     }
 
     footer {
-      margin-top: 40px;
-      font-size: 0.85rem;
+      margin-top: 35px;
+      font-size: 0.8rem;
       color: var(--text-muted);
+      letter-spacing: 1px;
     }
 
     @media (max-width: 480px) {
-      .container {
-        padding: 30px 18px;
+      .card {
+        padding: 35px 20px;
       }
       .brand-title {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
       }
-      .status-text {
-        font-size: 1.5rem;
+      .brand-subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Marca y Rubro -->
+  <div class="card">
+    <!-- Isotipo RG Muebles -->
+    <div class="logo-container">
+      <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 12 C28 12 12 28 12 50 C12 72 28 88 50 88 C62 88 74 83 80 74" stroke="#c89d7c" stroke-width="7" stroke-linecap="round"/>
+        <path d="M42 32 L42 68 M42 32 L58 32 C65 32 68 38 68 44 C68 50 64 54 56 54 L42 54 M53 54 L68 68" stroke="#c89d7c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Nombre de marca -->
     <h1 class="brand-title">RG MUEBLES</h1>
     <p class="brand-subtitle">Cocinas &bull; Baños &bull; Vestidores &bull; Revestimientos</p>
-    <div class="divider"></div>
+    <div class="wood-divider"></div>
 
-    <!-- Mensaje Principal -->
-    <h2 class="status-text">¡Estamos diseñando!</h2>
+    <!-- Estado -->
+    <div class="status-badge">¡Estamos diseñando!</div>
     <p class="description">
-      Si querés amueblar tu espacio o que convirtamos tus diseños en realidad, comunicate con nosotros:
+      Si querés amueblar tu espacio o que convirtamos tus proyectos en realidad, comunicate con nosotros:
     </p>
 
-    <!-- Botones de Contacto -->
+    <!-- Accesos Directos -->
     <div class="contact-links">
       <!-- WhatsApp -->
-      <a href="https://wa.me/5491144965647" class="contact-card" target="_blank">
+      <a href="https://wa.me/5491144965647" class="contact-btn" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
-        <div class="contact-info">
-          <div class="contact-label">WhatsApp</div>
+        <div class="contact-text">
+          <div class="contact-label">WhatsApp Directo</div>
           <div class="contact-value">11 4496 5647</div>
         </div>
       </a>
 
       <!-- Email -->
-      <a href="mailto:amoblamientos@rgmuebles.com.ar" class="contact-card">
+      <a href="mailto:amoblamientos@rgmuebles.com.ar" class="contact-btn">
         <i class="fa-regular fa-envelope"></i>
-        <div class="contact-info">
-          <div class="contact-label">Correo Electrónico</div>
+        <div class="contact-text">
+          <div class="contact-label">Enviar Correo</div>
           <div class="contact-value">amoblamientos@rgmuebles.com.ar</div>
-        </div>
-      </a>
-
-      <!-- Web -->
-      <a href="https://rgmuebles.com.ar" class="contact-card">
-        <i class="fa-solid fa-globe"></i>
-        <div class="contact-info">
-          <div class="contact-label">Sitio Web</div>
-          <div class="contact-value">rgmuebles.com.ar</div>
         </div>
       </a>
     </div>
   </div>
 
   <footer>
-    &copy; 2026 RG Muebles - Todos los derechos reservados.
+    &copy; 2026 RG Muebles. Todos los derechos reservados.
   </footer>
 
 </body>
