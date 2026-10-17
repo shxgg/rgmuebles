@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RG Muebles | Próximamente</title>
+  <!-- Fuentes Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-color: #1a1a1a;
+      --card-bg: #242424;
+      --accent-color: #c8a27d; /* Tono madera / dorado cálido */
+      --text-main: #ffffff;
+      --text-muted: #b0b0b0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background-color: var(--card-bg);
+      padding: 40px 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(200, 162, 125, 0.2);
+    }
+
+    .brand-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--text-main);
+      margin-bottom: 5px;
+    }
+
+    .brand-subtitle {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      height: 2px;
+      width: 60px;
+      background-color: var(--accent-color);
+      margin: 0 auto 30px auto;
+    }
+
+    .status-text {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 35px;
+      font-weight: 300;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 14px 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .contact-card:hover {
+      background-color: rgba(200, 162, 125, 0.15);
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .contact-card i {
+      font-size: 1.4rem;
+      color: var(--accent-color);
+      width: 35px;
+      text-align: center;
+      margin-right: 15px;
+    }
+
+    .contact-info {
+      text-align: left;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 18px;
+      }
+      .brand-title {
+        font-size: 2.2rem;
+      }
+      .status-text {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Marca y Rubro -->
+    <h1 class="brand-title">RG MUEBLES</h1>
+    <p class="brand-subtitle">Cocinas &bull; Baños &bull; Vestidores &bull; Revestimientos</p>
+    <div class="divider"></div>
+
+    <!-- Mensaje Principal -->
+    <h2 class="status-text">¡Estamos diseñando!</h2>
+    <p class="description">
+      Si querés amueblar tu espacio o que convirtamos tus diseños en realidad, comunicate con nosotros:
+    </p>
+
+    <!-- Botones de Contacto -->
+    <div class="contact-links">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5491144965647" class="contact-card" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div class="contact-info">
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-value">11 4496 5647</div>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:amoblamientos@rgmuebles.com.ar" class="contact-card">
+        <i class="fa-regular fa-envelope"></i>
+        <div class="contact-info">
+          <div class="contact-label">Correo Electrónico</div>
+          <div class="contact-value">amoblamientos@rgmuebles.com.ar</div>
+        </div>
+      </a>
+
+      <!-- Web -->
+      <a href="https://rgmuebles.com.ar" class="contact-card">
+        <i class="fa-solid fa-globe"></i>
+        <div class="contact-info">
+          <div class="contact-label">Sitio Web</div>
+          <div class="contact-value">rgmuebles.com.ar</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 RG Muebles - Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
