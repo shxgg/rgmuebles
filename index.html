@@ -36,7 +36,6 @@
       align-items: center;
       padding: 20px;
       text-align: center;
-      position: relative;
     }
 
     .card {
@@ -52,24 +51,26 @@
       border-bottom: 1px solid rgba(200, 157, 124, 0.2);
     }
 
-    /* Isotipo fiel al original */
+    /* Contenedor del Logo original */
     .logo-container {
-      width: 90px;
-      height: 90px;
+      width: 95px;
+      height: 95px;
       margin: 0 auto 18px auto;
       display: flex;
       justify-content: center;
       align-items: center;
       background: #ffffff;
       border-radius: 50%;
-      padding: 12px;
+      padding: 8px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       border: 2px solid var(--accent-wood);
     }
 
-    .logo-svg {
+    .logo-container img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
     .brand-title {
@@ -118,7 +119,7 @@
       font-weight: 300;
     }
 
-    /* Contenedor del código QR */
+    /* Contenedor del Código QR original */
     .qr-section {
       margin: 20px 0;
       display: flex;
@@ -134,10 +135,11 @@
       display: inline-block;
     }
 
-    .qr-box img, .qr-box svg {
-      width: 110px;
-      height: 110px;
+    .qr-box img {
+      width: 120px;
+      height: 120px;
       display: block;
+      border-radius: 6px;
     }
 
     .qr-label {
@@ -209,43 +211,24 @@
 <body>
 
   <div class="card">
-    <!-- Isotipo original fiel -->
+    <!-- Logo original mediante imagen -->
     <div class="logo-container">
-      <svg class="logo-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Curva exterior C -->
-        <path d="M115 25 C65 25 25 65 25 115 C25 165 65 205 115 205 C140 205 165 195 182 177" stroke="#121212" stroke-width="16" stroke-linecap="round"/>
-        <!-- Letra R interior con corte angular -->
-        <path d="M85 70 L85 160 M85 70 L130 70 C155 70 165 85 165 100 C165 115 155 130 130 130 L85 130 M120 130 L165 165" stroke="#121212" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <img src="logo.png" alt="RG Muebles Logo">
     </div>
 
-    <!-- Títulos -->
     <h1 class="brand-title">RG MUEBLES</h1>
     <p class="brand-subtitle">Cocinas &bull; Baños &bull; Vestidores &bull; Revestimientos</p>
     <div class="wood-divider"></div>
 
-    <!-- Mensaje -->
     <div class="status-badge">¡Estamos diseñando!</div>
     <p class="description">
       Si querés amueblar tu espacio o convertir tus proyectos en realidad, comunicate con nosotros:
     </p>
 
-    <!-- Código QR Integrado (SVG limpio basado en tu diseño) -->
+    <!-- Código QR original mediante imagen -->
     <div class="qr-section">
       <div class="qr-box">
-        <svg viewBox="0 0 100 100" width="100" height="100">
-          <!-- Patrón representativo del QR con isotipo central -->
-          <rect width="100" height="100" fill="#fff"/>
-          <!-- Esquinas localizadoras QR -->
-          <path d="M6 6h22v22H6z M12 12v10h10V12z M72 6h22v22H72z M78 12v10h10V12z M6 72h22v22H6z M12 78v10h10V78z" fill="#000"/>
-          <path d="M14 14h6v6h-6z M80 14h6v6h-6z M14 80h6v6h-6z" fill="#000"/>
-          <!-- Relleno de puntos aleatorios estilo QR -->
-          <path d="M34 8h4v6h-4z M44 6h6v4h-6z M54 8h6v8h-6z M32 20h8v4h-8z M46 16h4v8h-4z M56 22h8v4h-8z M34 32h6v6h-6z M44 30h8v4h-8z M56 32h4v10h-4z M68 30h6v6h-6z M78 32h12v4H78z M32 44h8v6h-8z M66 42h6v8h-6z M78 44h4v6h-4z M88 42h6v8h-6z M34 56h6v4h-6z M46 54h10v6H46z M68 56h8v4h-8z M82 58h12v4H82z M6 34h6v6H6 z M16 32h4v8h-4z M26 30h4v10h-4z M4 44h8v4H4z M16 46h6v6H16z M28 44h4v8h-4z M6 56h6v6H6z M16 58h4v4h-4z M24 56h8v6h-8z M32 68h8v6h-8z M46 68h6v10h-6z M58 66h6v6h-6z M68 70h6v8h-6z M78 68h4v10h-4z M88 66h6v8h-6z M34 82h6v6h-6z M44 80h8v8h-8z M58 82h4v10h-4z M68 84h6v8h-6z M80 82h10v8H80z" fill="#000"/>
-          <!-- Isotipo central blanco en el QR -->
-          <circle cx="50" cy="50" r="16" fill="#fff"/>
-          <path d="M46 40 C41 40 38 43 38 48 C38 53 41 56 46 56 C48 56 51 55 53 52" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M43 43 L43 53 M43 43 L49 43 C52 43 53 45 53 47 C53 49 52 51 49 51 L43 51 M48 51 L53 55" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <img src="qr.png" alt="QR RG Muebles">
       </div>
       <span class="qr-label">Escaneá para contacto rápido</span>
     </div>
